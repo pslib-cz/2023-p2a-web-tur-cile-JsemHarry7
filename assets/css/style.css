@@ -1,0 +1,100 @@
+:root {
+    --text-light: #000000;
+}
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+.page-header {
+    text-align: center;
+    padding: 1em;
+    margin-bottom: 1em;;
+}
+.categories {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* použijte auto-fit s šířkou sloupce minimálně 300px */
+    padding: 1em;
+    gap: 1em;
+}
+.categories__item {
+    position: relative;
+    color: inherit;
+    /* max-height: 80vh; */
+}
+.categories__item:hover {
+    box-shadow: 0 0 8px 2px var(--text-light);
+}
+.categories__item-image {
+    filter: brightness(0.9) saturate(1) contrast(1);
+}
+.categories__item-description {
+    padding: 1em;
+    color: var(--text-light);
+}
+/* TODO */
+
+
+.categories {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+/*blur image*/
+.page-header {
+    background-image: url(../images/egypt.jpg);
+    background-size: cover;
+}
+
+.categories__item-description
+{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.categories__item {
+    border-radius: 10px;
+    overflow: hidden;
+}
+/*on hover, the text moves up to the middle of the image*/
+.categories__item:hover .categories__item-description{
+    left: 50%;
+    bottom: 50%;
+    translate: -50% 50%;
+    white-space: nowrap;
+}
+.categories__item:hover{
+    transform: scale(1.04);
+    transition: transform 0.5s; 
+}
+/*on hover, the image is not blurred*/
+.categories:not(:has(a:hover)) img {
+    filter: blur(0px);
+}
+
+a.categories__item img{
+    filter: blur(10px);
+}
+
+a.categories__item:hover img{
+    filter: blur(0px);
+}
+
+/* Global */
+.img-responsive {
+    width: 100%;
+    display: block;
+}
+figure, h2 {
+    margin: 0;
+}
+.heading {
+    margin: 0.25em 0;
+    font-weight: bold;
+}
+.heading--h1 {
+    text-transform: uppercase;
+    font-size: 2em;
+    color: white;
+}
